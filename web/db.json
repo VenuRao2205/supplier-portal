@@ -1,0 +1,7 @@
+{
+  "suppliers": [
+    { "id": 1, "name": "Acme Steel", "email": "sales@acme.test",    "status": "Pending" },
+    { "id": 2, "name": "Globex Ltd", "email": "info@globex.test",   "status": "Approved" },
+    { "id": 3, "name": "Initech",    "email": "hello@initech.test", "status": "Rejected" }
+  ]
+}

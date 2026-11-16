@@ -20,13 +20,13 @@ export function NewSupplier() {
     formState: { errors },
   } = useForm<FormData>({ resolver: zodResolver(schema) });
 
-  const create = useMutation({
-    mutationFn: createSupplier,
-    onSuccess: () => {
-      qc.invalidateQueries({ queryKey: ["suppliers"] });
-      nav("/suppliers");
-    },
-  });
+ const create = useMutation({
+  mutationFn: (input: { name: string; email: string }) => createSupplier(input),
+  onSuccess: () => {
+    qc.invalidateQueries({ queryKey: ["suppliers"] });
+    nav("/suppliers");
+  },
+});
 
   return (
     <form onSubmit={handleSubmit((d) => create.mutate(d))}>

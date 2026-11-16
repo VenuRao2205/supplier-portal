@@ -14,10 +14,10 @@ export function SupplierList() {
     queryFn: getSuppliers,
   });
 
-  const approve = useMutation({
-    mutationFn: approveSupplier,
-    onSuccess: () => qc.invalidateQueries({ queryKey: ["suppliers"] }),
-  });
+ const approve = useMutation({
+  mutationFn: (id: number) => approveSupplier(id),
+  onSuccess: () => qc.invalidateQueries({ queryKey: ["suppliers"] }),
+});
 
   if (isLoading) return <p>Loading…</p>;
   if (error) return <p>Something went wrong.</p>;

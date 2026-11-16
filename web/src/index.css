@@ -109,3 +109,10 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+.board { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin-top: 12px; }
+.card { border: 1px solid #ccc; border-radius: 8px; padding: 12px; text-align: left; }
+.status { font-size: 12px; padding: 2px 8px; border-radius: 10px; }
+.status.pending { background: #fef3c7; }
+.status.approved { background: #d1fae5; }
+.status.rejected { background: #fee2e2; }
+.toolbar { display: flex; gap: 12px; align-items: center; }
